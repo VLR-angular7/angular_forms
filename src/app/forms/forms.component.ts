@@ -8,11 +8,23 @@ import {Employee} from '../employee'
 })
 export class FormsComponent  {
 
+  positionError=true;
 // submit(formData){
 // console.log(formData);
 // }
 
-employeeModal = new Employee("Udhay",821457,"udhay@gmail.com","Angular Developer","male","I have 5yrs",true)
+employeeModal = new Employee("",821457,"udhay@gmail.com","Angular Developer","male","I have 5yrs",true)
 
-positions=["Angular Developer","Java Developer","Devops engineer"]
+positions=["Angular Developer","Java Developer","Devops engineer","Linux admin"]
+
+
+validatePosition(value){
+  if(value=="default"){
+    this.positionError=true
+  }
+  else{
+    this.positionError=false
+  }
+  console.log(value)
+}
 }
