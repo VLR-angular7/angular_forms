@@ -1,0 +1,32 @@
+
+<div class="container">
+    {{employeeForm.value |json}}
+<form [formGroup]="employeeForm">
+    <div class="formgroup">
+    <label for="">Employee Name</label>
+    <input type="text" class="form-control" formControlName="employeeName">
+    </div>
+    <div class="formgroup">
+        <label for="">Employee Company</label>
+        <input type="text" class="form-control" formControlName="employeeCompany">
+        </div>
+
+        <div formGroupName="address">
+
+            <div class="formgroup">
+                <label for="">Employee City</label>
+                <input type="text" class="form-control" formControlName="city">
+                </div>
+                <div class="formgroup">
+                    <label for="">Employee Pincode</label>
+                    <input type="text" class="form-control" formControlName="pincode">
+                    </div>
+        </div>
+        <button (click)=submitData() type="button" class="btn btn-primary">Submit</button>
+        <button (click)=setData() type="button" class="btn btn-success">Set Values</button>
+
+</form>
+
+</div>
+
+
