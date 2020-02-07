@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators } from '@angular/forms';
-
+import {employeeNameValidator} from '../employeename.validator'
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
@@ -13,8 +13,14 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  
+  get employeeName() :any{ 
+    return this.employeeForm.get('employeeName');
+  }
+
   employeeForm=this.fb.group({
-    employeeName:['Srinivas',Validators.required],
+    employeeName:['',[Validators.required,Validators.minLength(5),employeeNameValidator(/venkat/,/mumbai/)]],
     employeeCompany:['']
 
   })
